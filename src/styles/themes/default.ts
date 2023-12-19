@@ -1,9 +1,10 @@
 export const defaultTheme = {
   color: {
-    // base
     white: "#FFFFFF",
     background: "#FAFAFA",
-    "base-card": "#F3F2F2",
+    purple: "#8047F8",
+
+    "base-card": "#E1E1E6",
     "base-input": "#EDEDED",
     "base-button": "#E6E5E5",
     "base-hover": "#D7D5D5",
@@ -11,9 +12,6 @@ export const defaultTheme = {
     "base-text": "#574F4D",
     "base-subtitle": "#403937",
     "base-title": "#272221",
-
-    // produto
-    purple: "#8047F8",
     "purple-light": "#EBE5F9",
     "purple-dark": "#4B2995",
     "yellow-light": "#F1E9C9",
