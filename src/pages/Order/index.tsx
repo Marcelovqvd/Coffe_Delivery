@@ -10,6 +10,10 @@ import {
   InputsForm,
   TitleContainer,
   PaymentForm,
+  SelectedContainer,
+  CoffeCard,
+  CoffeTittle,
+  PaymentContainerButton,
 } from "./styles";
 
 import deliver_address from "../../assets/deliver_address.svg";
@@ -17,6 +21,9 @@ import money from "../../assets/money.svg";
 import credit_card_Icon from "../../assets/credit_card_Icon.svg";
 import debit_card_Icon from "../../assets/debit_card_Icon.svg";
 import money_Icon from "../../assets/money_Icon.svg";
+import trash from "../../assets/trash.svg";
+
+import latte from "../../assets/coffes/Latte.svg";
 
 export function Order() {
   return (
@@ -74,28 +81,35 @@ export function Order() {
         </PaymentForm>
       </OrderContainer>
 
-      <OrderContainer>
+      <SelectedContainer>
         <Title>Cafés selecionados</Title>
 
         <SelectedCoffesContainer>
-          <img src="" alt="" />
-          <FormTittle>
-            <p>Expresso Tradicional</p>
+          <CoffeCard>
+            <img src={latte} alt="" />
+            <CoffeTittle>
+              <span>Expresso Tradicional</span>
+              <div>
+                <input type="string" />
+                <button>
+                  <img src={trash} alt="" />
+                  Remover
+                </button>
+              </div>
+            </CoffeTittle>
             <span>R$ 9,90</span>
-          </FormTittle>
-          <input type="select" />
-          <button>Remover</button>
+          </CoffeCard>
           <PaymentContainer>
-            <p>Total de itens</p>
+            <span>Total de itens</span>
             <span>R$ 29,70</span>
-            <p>Entrega</p>
+            <span>Entrega</span>
             <span>R$ 3,50</span>
             <p>total</p>
             <span>R$ 33,20</span>
-            <button>Confirmar Pedido</button>
           </PaymentContainer>
+          <PaymentContainerButton>Confirmar Pedido</PaymentContainerButton>
         </SelectedCoffesContainer>
-      </OrderContainer>
+      </SelectedContainer>
     </Container>
   );
 }

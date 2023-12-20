@@ -1,16 +1,15 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: 40rem 1fr;
   gap: 2rem;
-  max-width: 40rem;
 `;
 
 export const OrderContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  padding: 2.5rem;
 `;
 
 export const Title = styled.p`
@@ -24,15 +23,8 @@ export const Title = styled.p`
 `;
 
 export const OrderForm = styled.div`
-  display: flex;
-  flex-direction: column;
   padding: 2.5rem;
   background: ${(props) => props.theme.color["base-card"]};
-
-  form {
-    display: flex;
-    flex-direction: column;
-  }
 `;
 
 export const TitleContainer = styled.div`
@@ -69,11 +61,9 @@ export const FormTittle = styled.div`
 `;
 
 export const InputsForm = styled.div`
-  background: ${(props) => props.theme.color["base-card"]};
   margin-top: 32px;
   display: grid;
-  grid-template-columns: 200px 276px 1fr;
-  gap: 1.3rem;
+  gap: 1rem;
 
   input {
     padding: 12px;
@@ -90,11 +80,6 @@ export const InputsForm = styled.div`
     font-weight: 400;
     line-height: 130%; /* 18.2px */
   }
-`;
-
-export const Product = styled.div`
-  background: ${(props) => props.theme.color["base-card"]};
-  padding: 2.5rem;
 `;
 
 export const PaymentForm = styled.div`
@@ -134,8 +119,105 @@ export const ButtonsForm = styled.div`
   }
 `;
 
-export const SelectedCoffesContainer = styled.div`
-  background: ${(props) => props.theme.color["base-card"]};
+export const SelectedContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 `;
 
-export const PaymentContainer = styled.div``;
+export const SelectedCoffesContainer = styled.div`
+  background: ${(props) => props.theme.color["base-card"]};
+  padding: 40px;
+  border-radius: 6px 44px;
+`;
+
+export const CoffeCard = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+
+  img {
+    width: 64px;
+    height: 64px;
+  }
+`;
+
+export const CoffeTittle = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  p {
+    color: ${(props) => props.theme.color["base-subtitle"]};
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%; /* 20.8px */
+  }
+
+  img {
+    width: 16px;
+    height: 16px;
+  }
+`;
+
+export const PaymentContainer = styled.div`
+  span {
+    margin-right: 19px;
+    color: ${(props) => props.theme.color["base-text"]};
+    text-align: right;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%; /* 18.2px */
+  }
+
+  strong {
+    color: ${(props) => props.theme.color["base-subtitle"]};
+    text-align: right;
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 130%; /* 26px */
+  }
+
+  button {
+    display: flex;
+    padding: 12px 8px;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    align-self: stretch;
+    border-radius: 6px;
+    background: ${(props) => props.theme.color["yellow-product"]};
+    color: ${(props) => props.theme.color.white};
+    border: none;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 160%; /* 22.4px */
+    text-transform: uppercase;
+  }
+`;
+
+export const PaymentContainerButton = styled.button`
+  display: flex;
+  padding: 12px 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  align-self: stretch;
+  border-radius: 6px;
+  background: ${(props) => props.theme.color["yellow-product"]};
+  color: ${(props) => props.theme.color.white};
+  border: none;
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 160%; /* 22.4px */
+  text-transform: uppercase;
+`;

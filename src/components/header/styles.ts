@@ -24,8 +24,8 @@ export const LocationStyle = styled.div`
   background-color: ${(props) => props.theme.color["purple-light"]};
 
   img {
-    width: 22px;
-    height: 22px;
+    width: 1.375rem;
+    height: 1.375rem;
   }
 
   span {

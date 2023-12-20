@@ -5,5 +5,4 @@ export const LayoutContainer = styled.div`
   flex-direction: column;
   margin: 2.5rem auto;
   max-width: 70rem;
-  border-radius: 6px;
 `;
