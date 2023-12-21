@@ -25,7 +25,7 @@ import trash from "../../assets/trash.svg";
 
 import latte from "../../assets/coffes/Latte.svg";
 
-export function Order() {
+export default function Order() {
   return (
     <Container>
       <OrderContainer>
