@@ -62,10 +62,6 @@ export const FormTittle = styled.div`
 
 export const InputsForm = styled.div`
   margin-top: 32px;
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: 200px 276px 1fr;
-  grid-template-rows: auto auto auto auto;
 
   input {
     padding: 12px;

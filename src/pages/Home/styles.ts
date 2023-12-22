@@ -54,6 +54,11 @@ export const MenuCoffesContainer = styled.div`
   display: flex;
   flex-direction: column;
 
+  main {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+
   p {
     margin-bottom: 34px;
     color: ${(props) => props.theme.color["base-subtitle"]};
@@ -89,25 +94,10 @@ export const Coffe = styled.div`
     background: none;
   }
 
-  small {
-    color: ${(props) => props.theme.color["yellow-dark"]};
-    font-family: Roboto;
-    font-size: 10px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 130%; /* 13px */
-    text-transform: uppercase;
-    padding: 4px 8px;
-    border-radius: 100px;
-    background: ${(props) => props.theme.color["yellow-light"]};
-    margin-bottom: 1rem;
-  }
-
   main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: auto auto;
+
     p {
       color: ${(props) => props.theme.color["base-subtitle"]};
       text-align: center;
