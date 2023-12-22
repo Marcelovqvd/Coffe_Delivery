@@ -8,6 +8,8 @@ import {
   MenuCoffesContainer,
 } from "./styles";
 
+import { v4 as uuidv4 } from "uuid";
+
 import image_header_home from "../../assets/Home/image_header_home.svg";
 import cart_icon from "../../assets/Home/cart_icon.svg";
 import clock_icon from "../../assets/Home/clock_icon.svg";
@@ -20,6 +22,7 @@ import { useState } from "react";
 
 const list: Coffe[] = [
   {
+    id: uuidv4(),
     name: "Expresso Tradicional",
     type: "tradicional",
     description: "O tradicional café feito com água quente e grãos moídos",
@@ -28,6 +31,7 @@ const list: Coffe[] = [
     appears: 0,
   },
   {
+    id: uuidv4(),
     name: "Latte",
     type: "com Leite ",
     description:
@@ -41,6 +45,7 @@ const list: Coffe[] = [
 type Type = "tradicional" | "com Leite ";
 
 interface Coffe {
+  id: string;
   name: string;
   type: Type;
   description: string;
@@ -50,15 +55,19 @@ interface Coffe {
 }
 
 export default function Home() {
-  const [orderNumber, setOrderNumber] = useState(0);
+  const [orderNumber, setOrderNumber] = useState<number>(0);
   const [coffeList, setCoffeList] = useState<Coffe[] | undefined>([]);
 
   function handleCoffeClick(params: any) {
     const chosenCoffeName = params.currentTarget.name;
     const currentCoffe = list.find((item) => item.name === chosenCoffeName);
 
-    setOrderNumber((currentCoffe.appears += 1));
-    setCoffeList([...coffeList, currentCoffe]);
+    if (params.currentTarget.value === "+") {
+      setOrderNumber((currentCoffe.appears += 1));
+
+      setCoffeList([...coffeList, currentCoffe]);
+    } else {
+    }
   }
 
   return (
@@ -93,7 +102,7 @@ export default function Home() {
           <ul>
             {list.map((item) => {
               return (
-                <li>
+                <li key={item.id}>
                   <Coffe>
                     <header>
                       <img src={item.photo} alt="" />
