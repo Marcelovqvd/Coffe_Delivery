@@ -54,9 +54,10 @@ export const MenuCoffesContainer = styled.div`
   display: flex;
   flex-direction: column;
 
-  main {
+  main ul {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 1fr 1fr;
+    list-style: none;
   }
 
   p {

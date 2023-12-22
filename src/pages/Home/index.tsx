@@ -25,6 +25,7 @@ const list: Coffe[] = [
     description: "O tradicional café feito com água quente e grãos moídos",
     price: 9.9,
     photo: expresso_tradicional,
+    appears: 0,
   },
   {
     name: "Latte",
@@ -33,6 +34,7 @@ const list: Coffe[] = [
       "Uma dose de café expresso com o dobro de leite e espuma cremosa",
     price: 9.9,
     photo: latte,
+    appears: 0,
   },
 ];
 
@@ -44,11 +46,20 @@ interface Coffe {
   description: string;
   price: number;
   photo: string;
+  appears: number;
 }
 
 export default function Home() {
   const [orderNumber, setOrderNumber] = useState(0);
-  const [list, setList] = useState<Coffe[]>([]);
+  const [coffeList, setCoffeList] = useState<Coffe[] | undefined>([]);
+
+  function handleCoffeClick(params: any) {
+    const chosenCoffeName = params.currentTarget.name;
+    const currentCoffe = list.find((item) => item.name === chosenCoffeName);
+
+    setOrderNumber((currentCoffe.appears += 1));
+    setCoffeList([...coffeList, currentCoffe]);
+  }
 
   return (
     <Container>
@@ -79,48 +90,43 @@ export default function Home() {
           <p>Nossos cafés</p>
         </header>
         <main>
-          <Coffe>
-            <header>
-              <img src={expresso_tradicional} alt="" />
-              <small>tradicional</small>
-            </header>
-            <main>
-              <p>Expresso Tradicional</p>
-              <span>
-                O tradicional café feito com água quente e grãos moídos
-              </span>
-            </main>
-            <footer>
-              <span>
-                R$<span>9,90</span>
-              </span>
-              <button>-</button>
-              {orderNumber}
-              <button>+</button>
-              <img src={shopping_cart} alt="" />
-            </footer>
-          </Coffe>
-          <Coffe>
-            <header>
-              <img src={latte} alt="" />
-              <small>com leite</small>
-            </header>
-            <main>
-              <p>latte</p>
-              <span>
-                Uma dose de café expresso com o dobro de leite e espuma cremosa
-              </span>
-            </main>
-            <footer>
-              <span>
-                R$<span>9,90</span>
-              </span>
-              <button>-</button>
-              {orderNumber}
-              <button>+</button>
-              <img src={shopping_cart} alt="" />
-            </footer>
-          </Coffe>
+          <ul>
+            {list.map((item) => {
+              return (
+                <li>
+                  <Coffe>
+                    <header>
+                      <img src={item.photo} alt="" />
+                      <small>{item.type}</small>
+                    </header>
+                    <main>
+                      <p>{item.name}</p>
+                      <span>{item.description}</span>
+                    </main>
+                    <footer>
+                      <span>
+                        R$<span>{item.price}</span>
+                      </span>
+                      <input
+                        type="button"
+                        value="-"
+                        name={item.name}
+                        onClick={handleCoffeClick}
+                      />
+                      {item.appears}
+                      <input
+                        type="button"
+                        value="+"
+                        name={item.name}
+                        onClick={handleCoffeClick}
+                      />
+                      <img src={shopping_cart} alt="" />
+                    </footer>
+                  </Coffe>
+                </li>
+              );
+            })}
+          </ul>
         </main>
       </MenuCoffesContainer>
     </Container>
