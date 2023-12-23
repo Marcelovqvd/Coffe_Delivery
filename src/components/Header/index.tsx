@@ -1,8 +1,8 @@
-import { Aside, Container } from "./styles";
-import { Link } from "react-router-dom";
-import { MapPin, ShoppingCart } from "@phosphor-icons/react";
+import { MapPin, ShoppingCart } from "@phosphor-icons/react"
+import { Link } from "react-router-dom"
 
-import logo from "../../../public/images/logo.svg";
+import logo from "../../../public/logo.svg"
+import { Aside, Container } from "./styles"
 
 export default function Header() {
   return (
@@ -22,5 +22,5 @@ export default function Header() {
         </Link>
       </Aside>
     </Container>
-  );
+  )
 }
