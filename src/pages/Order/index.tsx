@@ -3,17 +3,11 @@ import {
   OrderContainer,
   Title,
   ButtonsForm,
-  PaymentContainer,
-  SelectedCoffesContainer,
   OrderForm,
   FormTittle,
   InputsForm,
   TitleContainer,
   PaymentForm,
-  SelectedContainer,
-  CoffeCard,
-  CoffeTittle,
-  PaymentContainerButton,
 } from "./styles";
 
 import deliver_address from "../../assets/deliver_address.svg";
@@ -21,9 +15,6 @@ import money from "../../assets/money.svg";
 import credit_card_Icon from "../../assets/credit_card_Icon.svg";
 import debit_card_Icon from "../../assets/debit_card_Icon.svg";
 import money_Icon from "../../assets/money_Icon.svg";
-import trash from "../../assets/trash.svg";
-
-import latte from "../../assets/coffes/Latte.svg";
 
 export default function Order() {
   return (
@@ -80,36 +71,6 @@ export default function Order() {
           </ButtonsForm>
         </PaymentForm>
       </OrderContainer>
-
-      <SelectedContainer>
-        <Title>Cafés selecionados</Title>
-
-        <SelectedCoffesContainer>
-          <CoffeCard>
-            <img src={latte} alt="" />
-            <CoffeTittle>
-              <span>Expresso Tradicional</span>
-              <div>
-                <input type="string" />
-                <button>
-                  <img src={trash} alt="" />
-                  Remover
-                </button>
-              </div>
-            </CoffeTittle>
-            <span>R$ 9,90</span>
-          </CoffeCard>
-          <PaymentContainer>
-            <span>Total de itens</span>
-            <span>R$ 29,70</span>
-            <span>Entrega</span>
-            <span>R$ 3,50</span>
-            <p>total</p>
-            <span>R$ 33,20</span>
-          </PaymentContainer>
-          <PaymentContainerButton>Confirmar Pedido</PaymentContainerButton>
-        </SelectedCoffesContainer>
-      </SelectedContainer>
     </Container>
   );
 }
