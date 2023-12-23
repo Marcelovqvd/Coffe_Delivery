@@ -9,6 +9,7 @@
     "lint": "eslint src --ext .ts,.tsx"
   },
   "dependencies": {
+    "@phosphor-icons/react": "^2.0.15",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.21.0",
