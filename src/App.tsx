@@ -1,9 +1,9 @@
-import { ThemeProvider } from "styled-components";
+import { Outlet } from "react-router-dom"
+import { ThemeProvider } from "styled-components"
 
-import { GlobalStyle } from "./styles/global";
-import { defaultTheme } from "./styles/themes/default";
-import { Outlet } from "react-router-dom";
-import Header from "./components/Header";
+import Header from "./components/Header"
+import { GlobalStyle } from "./styles/global"
+import { defaultTheme } from "./styles/themes/default"
 
 export function App() {
   return (
@@ -13,5 +13,5 @@ export function App() {
       <Header />
       <Outlet />
     </ThemeProvider>
-  );
+  )
 }

@@ -1,14 +1,13 @@
 import { MapPin, ShoppingCart } from "@phosphor-icons/react"
 import { Link } from "react-router-dom"
 
-import logo from "../../../public/logo.svg"
 import { Aside, Container } from "./styles"
 
 export default function Header() {
   return (
     <Container>
       <Link to="/">
-        <img src={logo} alt="Coffee Delivery" />
+        <img src="/logo.svg" alt="Coffee Delivery" />
       </Link>
 
       <Aside>
