@@ -70,8 +70,8 @@ export default function Home() {
         <h2>Nossos cafés</h2>
 
         <div>
-          {coffes.map(coffe => {
-            return <Card />
+          {coffes.map(coffee => {
+            return <Card coffee={coffee} />
           })}
         </div>
       </CoffeList>
